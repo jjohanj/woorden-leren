@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body class="">
+  <div class="container mt-5">
+  <!-- Add your site or application content here -->
+  <h1 class="py-2 display-6 mb-3">Latijnse woorden leren</h1>
+  <div class="d-flex flex-column-reverse flex-md-row mb-5">
+    <div>
+      <button class="btn btn-warning btn-sm  mb-2 me-2" onclick="showSolution();">Toon antwoord</button>
+    </div>
+    <div>
+      <button type="button" class="btn btn-secondary btn-sm mb-2 me-2" data-bs-toggle="modal" data-bs-target="#exampleModal2">Toon alle woorden en antwoorden</button>
+    </div>
+    <div>
+      <button class="btn-reverse btn-secondary btn btn-sm  mb-2 me-2" onclick="setReverse()">Oefen andersom</button>
+    </div>
+  </div>
+  <div class="row">
+
+  <div class="col-md-6 col-xs-12">
+
+  <div class="d-flex">
+
+  <p id="word" class="fs-2"></p>
+    <p id="solution" class="fs-2 ps-4" ></p>
+  </div>
+
+  <div class="input-group mb-3 input-group-lg">
+  <input type="text" class="form-control"  id="text" >
+  <button id="send" class="btn btn-success" type="button" onclick="getInputValue();">Verstuur</button>
+</div>
+<p><input type="checkbox" class="checkbox" id="myCheck"><label class="ms-2" for="myCheck">Ook speciale tekens goed invullen</label></p>
+</div>
+<div class="col-xs-12 col-md-5 offset-md-1 pt-6">
+  <p class="fs-3 mt-1">Goede antwoorden:</p>
+  <p class="sub mt-0"><span id="countcorrect"></span> van de <span id="count"></span></p>
+
+  </p>
+  <ul class="succes fs-5"></ul>
+</div>
+<button type="button" class="btn btn-primary btn-modal d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+</button>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><span class="modal-solution fs-3"></span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-bold fs-3">
+      </div>
+      <div class="modal-footer  align-items-baseline">
+        <span>
+          Mijn antwoord:
+        </span>
+        <span class="myanswer text-start fs-4 ps-2">
+        </span>
+      </div>
+      <button onclick="wrongRight()" class="border border-2 py-2 btn-outline-success">Reken mijn antwoord goed</button>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2"><span class="modal-solution fs-3"></span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-bold text-dark text-start" id="allwords">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <script src="js/talen/latijn.js?v=1.01"></script>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js?v=1.02"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  </div>
+</body>
+
+</html>

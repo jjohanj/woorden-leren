@@ -1,0 +1,142 @@
+<!doctype html>
+  <html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="../css/main.css?version=2">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <meta name="theme-color" content="#fafafa">
+  </head>
+
+  <body class="sb-sidenav-toggled mt-5">
+    <div class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand ps-3  d-none d-sm-block" href="./">frans 2-10</a>
+    <div class="container justify-content-start">
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-lg order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="bi bi-sliders fs-3"></i></button>
+    <p class="sub mt-0 mb-0 bg-success h-100 p-2 rounded-3 text-white"><span id="countcorrect"></span> / <span id="count"></span></p>
+    <button class="btn btn-warning ms-2" onclick="showSolution();" data-bs-toggle="tooltip" data-bs-placement="right" title="Toon antwoord"><i class="bi bi-info-square bg-warning"></i></button>
+    <!-- Navbar Search-->
+
+    </div>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu mt-5">
+                    <div class="nav">
+                      <div class="nav-link align-items-stretch py-3">
+                      <input type="checkbox" class="checkbox mt-2" onclick="setReverse()" id="reverse"><label class="ps-2 text-light" for="reverse">Wissel de gevraagde taal</label>
+                      </div>
+                      <div class="nav-link align-items-stretch py-3">
+                        <input type="checkbox" class="checkbox mt-2" id="myCheck"><label class="ps-2 text-light" for="myCheck" data-bs-toggle="tooltip" data-bs-placement="right" title="Tekens als: ', ^, `, dienen correct toegepast te worden">Ook speciale tekens goed invullen</label>
+                      </div>
+                      <div class="nav-link align-items-stretch py-3">
+                        <input type="checkbox" class="checkbox mt-2" id="multiple" onclick="showField()"  /><label class="ps-2 text-light" for="multiple">Multiple choice</label>
+                      </div>
+                      <div>
+                      <hr />
+                      <div class="nav-link align-items-stretch py-2 mt-4">
+                      <button type="button" class="btn text-light text-start w-100" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i class="bi bi-lightbulb pe-2"></i>Toon hele lijst</button>
+                      </div>
+                      <div class="nav-link align-items-stretch py-2">
+                      <button  class="btn text-light text-start w-100" onClick="window.location.reload();"><i class="bi bi-arrow-clockwise pe-2"></i>Begin opnieuw</button>
+                      </div>
+                      <div class="nav-link align-items-stretch py-2">
+                      <a class="btn text-light text-start w-100" href="./"><i class="bi bi-back pe-2"></i>Terug naar overzicht</a>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    <div class="container mt-5">
+        <div class="row mb-4 gap-3 justify-content-center mt-1 bg-light p-4 rounded-3">
+            <div class="col-12 col-sm-10 col-md-8 col-xl-5 p-5 shadow-sm bg-white rounded-3">
+                <!-- toggler -->
+                <div class="d-flex bg-light shadow-sm justify-content-center align-items-center py-2 mb-3">
+                  <p id="word" class="fs-4 bg-light mb-"></p>
+                  <p id="solution" class="fs-4 ps-4 mb-0 text-danger"></p>
+                </div>
+                <div class="field-input">
+                  <div class="input-group mb-3 input-group-lg field-input">
+                  <input type="text" class="form-control shadow-sm bg-light"  id="text" >
+                  </div>
+                  <button id="send" class="btn btn-success w-100" type="button" onclick="getInputValue();">Verstuur</button>
+                </div>
+                <div class="d-none field-mc d-flex justify-content-evenly bg-light mt-3 mb-2 py-4">
+                  <button class="multiplechoice btn btn-success m-1" onclick="multipleChoiceAnswer(this.value)"></button>
+                  <button class="multiplechoice btn btn-success m-1" onclick="multipleChoiceAnswer(this.value)"></button>
+                  <button class="multiplechoice btn btn-success m-1" onclick="multipleChoiceAnswer(this.value)"></button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-10 col-md-8 col-xl-4 bg-white p-5 shadow-sm rounded-3">
+            <p class="fs-6 mt-1">Goede antwoorden:</p>
+                <ul class="succes fs-6"></ul>
+            </div>
+
+            </div>
+            <button type="button" class="btn btn-primary btn-modal d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            </button>
+        </div>
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-light p-4">
+        <div class="modal-header bg-white fs-4">
+          <span class="modal-solution"></span>
+          <button type="button" class="btn-close btn-close-wr" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-white text-bold fs-4">
+        </div>
+        <div class="modal-footer justify-content-start align-items-baseline">
+          <span>
+            Mijn antwoord:
+          </span>
+          <span class="myanswer text-start fs-4 ps-2">
+          </span>
+        </div>
+        <button onclick="wrongRight()" class="btn py-2 btn-success">Reken mijn antwoord goed</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2"><span class="modal-solution fs-3"></span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-bold text-dark text-start" id="allwords">
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    <script>let cat ="frans 2-10"</script>
+    <script src="../js/talen/frans 2-10.js?verson=2"></script>
+    <script src="../js/talen/test.js?verson=3"></script>
+    <script src="../javascript.js?verson=2"></script>
+    </div>
+  </body>
+
+  </html>

@@ -1,0 +1,12 @@
+[15-Nov-2021 03:50:07 UTC] PHP Notice:  Undefined variable: result in /home/flonxc1q/woorden-leren.nl/test/index.php on line 21
+[15-Nov-2021 03:50:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/flonxc1q/woorden-leren.nl/test/index.php on line 21
+[15-Nov-2021 03:50:07 UTC] PHP Notice:  Undefined variable: text in /home/flonxc1q/woorden-leren.nl/test/index.php on line 202
+[15-Nov-2021 03:50:07 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/flonxc1q/woorden-leren.nl/test/index.php on line 202
+[23-Jan-2022 19:15:21 UTC] PHP Notice:  Undefined variable: result in /home/flonxc1q/woorden-leren.nl/test/index.php on line 21
+[23-Jan-2022 19:15:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/flonxc1q/woorden-leren.nl/test/index.php on line 21
+[23-Jan-2022 19:15:21 UTC] PHP Notice:  Undefined variable: text in /home/flonxc1q/woorden-leren.nl/test/index.php on line 202
+[23-Jan-2022 19:15:21 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/flonxc1q/woorden-leren.nl/test/index.php on line 202
+[11-Feb-2022 10:32:48 UTC] PHP Notice:  Undefined variable: result in /home/flonxc1q/woorden-leren.nl/test/index.php on line 21
+[11-Feb-2022 10:32:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/flonxc1q/woorden-leren.nl/test/index.php on line 21
+[11-Feb-2022 10:32:48 UTC] PHP Notice:  Undefined variable: text in /home/flonxc1q/woorden-leren.nl/test/index.php on line 202
+[11-Feb-2022 10:32:48 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/flonxc1q/woorden-leren.nl/test/index.php on line 202

@@ -1,0 +1,8 @@
+.htaccess
+.user.ini
+file/min/*
+file/upload/*
+file/cache/*
+file/css/fonts/*
+file/css/fonts/**/*.woff2
+file/css/fonts/**/*.woff
